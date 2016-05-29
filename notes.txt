@@ -1,0 +1,21 @@
+#checkout your app
+
+heroku git:remote -a yourapp
+
+#Stop app
+heroku ps:scale web=0
+
+#Start App
+heroku ps:scale web=1
+
+#Open app
+heroku open
+
+#Push Changes to heroku
+git add .
+git commit -m "some message"
+git push heroku master
+
+#Running locally
+heroku local web
+http://localhost:5000
