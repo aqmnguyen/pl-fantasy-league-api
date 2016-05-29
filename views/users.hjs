@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body class="wrapper">
+
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+    <p>Below are a list of all the users</p>
+    <ul>
+    	{{#userlist}}
+    	<li>{{email}} + {{username}}</li>
+    	{{/userlist}}
+    </ul>
+
+  </body>
+</html>
