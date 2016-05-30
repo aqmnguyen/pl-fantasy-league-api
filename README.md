@@ -16,10 +16,10 @@ List all players in the Premier League
 Search for specific player in the Premier League
 
 ```
-/players/{{surname}} // /players/cech/
+/players/{{surname}} eg. /players/cech/
 ```
 
-List all teams in the Permier League
+List all teams in the Premier League
 
 ```
 /team/
@@ -28,5 +28,5 @@ List all teams in the Permier League
 List all players for a specific team in the Premier League
 
 ```
-/team/{{team}} // /team/arsenal
+/team/{{team}} eg. /team/arsenal
 ```
