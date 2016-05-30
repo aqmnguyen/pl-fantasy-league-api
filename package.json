@@ -1,7 +1,7 @@
 {
   "name": "pl-fantasy-league-api",
   "version": "0.2.5",
-  "description": "A sample Node.js app using Express 4",
+  "description": "List Premier League football players stats in the Fantasy League website.",
   "engines": {
     "node": "5.9.1"
   },
@@ -20,7 +20,11 @@
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
+    "premier league",
+    "football",
+    "soccer",
+    "fantasy league"
   ],
   "license": "MIT"
 }

@@ -31,9 +31,9 @@ module.exports = {
           players.push(player);
         });
     	});
-      
+
       players = lastPlayer(players);
-    	callback(players);
+      callback(players);
     });
 
   },
@@ -65,6 +65,36 @@ module.exports = {
     
     players = lastPlayer(players);
     return players;
+  },
+  teamSearch : function(array, name){
+    console.log('teamSearch');
+    var players = [];
+    $(array).each(function(item, value){
+      var playerTeam = value.team.toLowerCase().trim();
+      if(playerTeam.indexOf(name.toLowerCase()) > -1){
+        var player = {
+          name : value.name,
+          team : value.team,
+          points : value.points,
+          price : value.price,
+          position : value.position
+        }
+        players.push(player);
+      }
+    });
+
+    players = lastPlayer(players);
+    return players;
+
+  },
+  teamSort : function(array){
+    console.log('team sort');
+    array.sort(function(a, b){
+      if(a.team < b.team) return -1;
+      if(a.team > b.team) return 1;
+      return 0;
+    });
+    return array;
   },
   lastPlayer : lastPlayer
 };

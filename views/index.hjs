@@ -13,6 +13,12 @@
     <p>/players/</p>
     <br />
     <p>Search for specific player in the Premier League</p>
-    <p>/players/{(surname)} // /players/cech</p>
+    <p>/players/{(surname)} eg. /players/cech</p>
+    <br />
+    <p>List all teams in the Permier League</p>
+    <p>/team/</p>
+    <br />
+    <p>List all players for a specific team in the Premier League</p>
+    <p>/team/{(team)} eg. /team/arsenal</p>
   </body>
 </html>

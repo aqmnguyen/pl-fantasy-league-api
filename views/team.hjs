@@ -1,0 +1,15 @@
+{
+	"title" : "{{header}}",
+	"search" : "{{search}}",
+	"players" : [
+	{{#playerList}}
+	{
+		"name" : "{{name}}",
+		"position" : "{{position}}",
+		"team" : "{{team}}",
+		"points" : "{{points}}",
+		"price" : "{{price}}"
+	}{{^last}}, {{/last}}
+	{{/playerList}}
+	]
+}
