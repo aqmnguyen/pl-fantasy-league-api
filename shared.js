@@ -35,11 +35,6 @@ module.exports = {
     });
 
   },
-  getJSONContent: function (url) {
-  	// do some code
-  	console.log('getJSONContent');
-  	console.log(url);
-  },
   playerSearchName : function(array, name) {
     console.log('playerSearchName');
     var players = [];
@@ -55,9 +50,7 @@ module.exports = {
           price : value.price,
           position : value.position
         }
-
         players.push(player);
-
       }
     });
     
@@ -104,7 +97,6 @@ module.exports = {
     });
 
     players = lastPlayer(players);
-    //console.log(players);
     return players;
 
   },
@@ -125,7 +117,5 @@ function lastPlayer (array) {
   if(array.length){
     array[array.length - 1].last = true;
   }
-  
   return array;
-
 }
