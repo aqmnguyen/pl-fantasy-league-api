@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>{{ title }}</title>
-	<link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body class="wrapper">
-	<h1>{{header}}</h1>
-	<ul class="players">
-		{{#playerList}}
-		<ul class="player">
-			<li class="position">{{position}}</li>
-			<li class="name">{{name}}</li>
-			<li class="team">{{team}}</li>
-			<li class="points">{{points}}</li>
-			<li class="price">{{price}}</li>
-		</ul>
-		{{/playerList}}
-	</ul>
-
-</body>
-</html>
+{
+	"title" : "{{header}}",
+	"search" : "{{search}}",
+	"players" : [
+	{{#playerList}}
+	{
+		"name" : "{{name}}",
+		"position" : "{{position}}",
+		"team" : "{{team}}",
+		"points" : "{{points}}",
+		"price" : "{{price}}"
+	}{{^last}}, {{/last}}
+	{{/playerList}}
+	]
+}
