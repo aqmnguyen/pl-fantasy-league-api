@@ -1,14 +1,14 @@
 {
 	"title" : "{{header}}",
 	"search" : "{{search}}",
-	"players" : [
+	"{{listName}}" : [
 	{{#playerList}}
 	{
-		"name" : "{{name}}",
-		"position" : "{{position}}",
-		"team" : "{{team}}",
-		"points" : "{{points}}",
-		"price" : "{{price}}"
+		{{#name}}"name" : "{{name}}",{{/name}}
+		{{#position}}"position" : "{{position}}",{{/position}}
+		"team" : "{{team}}"{{#points}},
+		"points" : "{{points}}",{{/points}}
+		{{#price}}"price" : "{{price}}"{{/price}}
 	}{{^last}}, {{/last}}
 	{{/playerList}}
 	]

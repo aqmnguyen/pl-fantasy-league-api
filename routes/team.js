@@ -11,13 +11,15 @@ function routeResponse(players){
 	//sort players by team
 	var content = {
 		title : 'Premier League Fantasy League API - Teams',
-		header : 'Teams',
+		header : 'teams',
 		playerList : shared.teamSort(players)
 	}
 
 	/* GET home page. */
 	router.get('/', function(req, res, next) {
-		console.log('index');
+		//filter content.playerList to only show a team once
+		content.listName = 'teams';
+		content.playerList = shared.teamsOnly(content.playerList);
 		res.setHeader('Content-Type', 'application/json');
 		res.render('team', content);
 	});
@@ -26,16 +28,13 @@ function routeResponse(players){
 	router.get('/:id', function(req, res, next) {
 		//search for that team based on the id
 		var search = req.params.id;
+		content.listName = 'players';
 		content.playerList = shared.teamSearch(content.playerList, search);
 		content.search = search;
 		res.setHeader('Content-Type', 'application/json');
 		res.render('team', content);
-
 	});
 
 }
 
-
 module.exports = router;
-
-

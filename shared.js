@@ -45,7 +45,7 @@ module.exports = {
   playerSearchName : function(array, name) {
     console.log('playerSearchName');
     var players = [];
-    $(array).each(function(item, value){
+    $(array).each(function(index, value){
 
       var playerName = value.name.toLowerCase().replace(/\s/g,'');
 
@@ -66,10 +66,34 @@ module.exports = {
     players = lastPlayer(players);
     return players;
   },
+  teamsOnly : function(array){
+    console.log('teamsOnly');
+
+    var teams = [];
+    var arrayObject = [];
+
+    $(array).each(function(index, value){
+      var playerTeam = value.team.trim();
+      if(teams.indexOf(playerTeam) === -1){
+        teams.push(playerTeam);
+        var t = {
+          name : false,
+          team : playerTeam,
+          points : false,
+          price : false,
+          position: false
+        }
+        arrayObject.push(t);
+      }
+    });
+    arrayObject = lastPlayer(arrayObject);
+    return arrayObject;
+
+  },
   teamSearch : function(array, name){
     console.log('teamSearch');
     var players = [];
-    $(array).each(function(item, value){
+    $(array).each(function(index, value){
       var playerTeam = value.team.toLowerCase().trim();
       if(playerTeam.indexOf(name.toLowerCase()) > -1){
         var player = {
@@ -84,6 +108,7 @@ module.exports = {
     });
 
     players = lastPlayer(players);
+    //console.log(players);
     return players;
 
   },
