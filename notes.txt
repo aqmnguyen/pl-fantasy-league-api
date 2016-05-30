@@ -1,4 +1,4 @@
-#checkout your app
+#checkout your app to use as the heroku command
 
 heroku git:remote -a yourapp
 

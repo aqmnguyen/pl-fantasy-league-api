@@ -1,8 +1,24 @@
+*{
+	padding:0;
+	margin:0;
+}
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+.wrapper{
+	width:720px;
+	margin:0 auto;
+}
+h1{
+	margin:20px 0;
+}
 a {
   color: #00B7FF;
+}
+
+ul{
+	margin:20px 0;
+}
+li{
+	list-style: none;
 }

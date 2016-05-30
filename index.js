@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var $ = require('cheerio');
 
 // //db connection
 // var mongo = require('mongodb');
@@ -12,6 +13,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var players = require('./routes/players');
 
 var app = express();
 
@@ -37,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/players', players);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
