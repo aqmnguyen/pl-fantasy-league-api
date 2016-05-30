@@ -8,9 +8,11 @@
     <h1>{{ title }}</h1>
     <p>Welcome to {{ title }}</p>
     <p>You can do the following requests:</p>
+    <br />
     <p>List all players in the Premier League</p>
     <p>/players/</p>
+    <br />
     <p>Search for specific player in the Premier League</p>
-    <p>/players/{{surname}}</p>
+    <p>/players/{(surname)}</p>
   </body>
 </html>
