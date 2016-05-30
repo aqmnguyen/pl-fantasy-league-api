@@ -4,13 +4,11 @@ var $ = require('cheerio');
 module.exports = {
   getHTMLContent: function (url, callback) {
     // do some code
-    console.log('getHTMLContent');
     var options = {
     	url : url
     }
     curl.request(options, function(err, raw){
     	if(err) throw err;
-    	console.log('curl callback');
     	var players = [];
 
     	$('.ismLine', raw).each(function(index, value) {
@@ -67,8 +65,6 @@ module.exports = {
     return players;
   },
   teamsOnly : function(array){
-    console.log('teamsOnly');
-
     var teams = [];
     var arrayObject = [];
 
@@ -113,7 +109,6 @@ module.exports = {
 
   },
   teamSort : function(array){
-    console.log('team sort');
     array.sort(function(a, b){
       if(a.team < b.team) return -1;
       if(a.team > b.team) return 1;
@@ -127,7 +122,6 @@ module.exports = {
 function lastPlayer (array) {
   //this determines the last item of the array and applies the last identifier 
   //to the json request for us to display
-  console.log('lastPlayer');
   if(array.length){
     array[array.length - 1].last = true;
   }
