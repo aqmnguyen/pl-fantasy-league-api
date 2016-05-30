@@ -3,13 +3,13 @@
 Allows you to do the following
 ---------------
 
-Get all players in the premier league
+List all players in the Premier League
 
 ```
 /players/
 ```
 
-Search for specific player
+Search for specific player in the Premier League
 
 ```
 /players/{{surname}}
