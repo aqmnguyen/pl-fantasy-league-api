@@ -3,7 +3,7 @@
 <head>
 	<title>{{ title }}</title>
 	<link rel='stylesheet' href='/stylesheets/style.css' />
-	<link rel='stylesheet' href='/javascripts/highlight/styles/default.css' />
+	<link rel='stylesheet' href='/javascripts/highlight/styles/agate.css' />
 	<script src="/javascripts/highlight/highlight.pack.js" />
 	<script type="text/javascript">
 	hljs.initHighlightingOnLoad();
