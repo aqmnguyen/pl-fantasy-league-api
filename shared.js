@@ -73,8 +73,10 @@ function lastPlayer (array) {
   //this determines the last item of the array and applies the last identifier 
   //to the json request for us to display
   console.log('lastPlayer');
+  if(array.length){
+    array[array.length - 1].last = true;
+  }
   
-  array[array.length - 1].last = true;
   return array;
 
 }
