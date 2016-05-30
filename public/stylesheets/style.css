@@ -9,16 +9,9 @@ body {
 	width:720px;
 	margin:0 auto;
 }
-h1{
+h1, h2{
 	margin:20px 0;
 }
 a {
   color: #00B7FF;
-}
-
-ul{
-	margin:20px 0;
-}
-li{
-	list-style: none;
 }

@@ -12,9 +12,7 @@
 <body class="wrapper">
 	<h1>{{ title }}</h1>
 	<p>Welcome to {{ title }}</p>
-	<br />
 	<h2>You can do the following requests:</h2>
-	<br />
 	<p>List all players in the Premier League</p>
 	<pre>
 		<code class="js hljs">/players/</code>
