@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body class="wrapper">
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
-    <p>You can do the following requests:</p>
-    <br />
-    <p>List all players in the Premier League</p>
-    <p>/players/</p>
-    <br />
-    <p>Search for specific player in the Premier League</p>
-    <p>/players/{(surname)} eg. /players/cech</p>
-    <br />
-    <p>List all teams in the Permier League</p>
-    <p>/team/</p>
-    <br />
-    <p>List all players for a specific team in the Premier League</p>
-    <p>/team/{(team)} eg. /team/arsenal</p>
-  </body>
+<head>
+	<title>{{ title }}</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel='stylesheet' href='/javascripts/highlight/styles/default.css' />
+	<script src="/javascripts/highlight/highlight.pack.js" />
+	<script type="text/javascript">
+	hljs.initHighlightingOnLoad();
+	</script>
+</head>
+<body class="wrapper">
+	<h1>{{ title }}</h1>
+	<p>Welcome to {{ title }}</p>
+	<br />
+	<h2>You can do the following requests:</h2>
+	<br />
+	<p>List all players in the Premier League</p>
+	<pre>
+		<code class="js hljs">/players/</code>
+	</pre>
+	<p>Search for specific player in the Premier League</p>
+	<pre>
+		<code class="js hljs">/players/{(surname)} //e.g /players/cech</code>
+	</pre>
+	<p>List all teams in the Permier League</p>
+	<pre>
+		<code class="js hljs">/team/</code>
+	</pre>
+	<p>List all players for a specific team in the Premier League</p>
+	<pre>
+		<code class="js hljs">/team/{(team)} //e.g /team/arsenal</code>
+	</pre>
+</body>
 </html>
