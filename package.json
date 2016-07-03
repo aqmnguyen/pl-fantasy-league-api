@@ -1,30 +1,17 @@
 {
-  "name": "pl-fantasy-league-api",
-  "version": "0.2.5",
-  "description": "List Premier League football players stats in the Fantasy League website.",
-  "engines": {
-    "node": "5.9.1"
-  },
-  "main": "index.js",
+  "name": "pl-fantasy-league-api-update",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./bin/www"
   },
   "dependencies": {
-    "ejs": "2.4.1",
-    "express": "4.13.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/CC-MN/pl-fantasy-league-api"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express",
-    "premier league",
-    "football",
-    "soccer",
-    "fantasy league"
-  ],
-  "license": "MIT"
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "hjs": "~0.0.6",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
+  }
 }

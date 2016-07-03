@@ -1,19 +1,27 @@
-var curl = require('curlrequest');
+var RP = require('request-promise');
 var $ = require('cheerio');
 
-module.exports = {
-  getHTMLContent: function (url, callback) {
+function PL(){}
+
+PL.prototype = {
+
+  getHTMLContent : function (url) {
+    
     // do some code
     var options = {
-    	url : url
+      url : url
     }
-    curl.request(options, function(err, raw){
-    	if(err) throw err;
-    	var players = [];
-
-    	$('.ismLine', raw).each(function(index, value) {
-    		var playerPosition = $('.ismElementList h2', raw).eq(index).text();
-    		$('tbody tr', this).each(function(i, v){
+    
+    return RP.get(options)
+    .catch(function(e){
+      console.log(e);
+      throw e;
+    })
+    .then(function(response){
+      var players = [];
+      $('.ismLine', response).each(function(index, value) {
+        var playerPosition = $('.ismElementList h2', response).eq(index).text();
+        $('tbody tr', this).each(function(i, v){
           var playerName = $('td', this).eq(0).text();
           var playerTeam = $('td', this).eq(1).text();
           var playerPoints = $('td', this).eq(2).text();
@@ -28,10 +36,9 @@ module.exports = {
           }
           players.push(player);
         });
-    	});
-
-      players = lastPlayer(players);
-      callback(players);
+      });
+      //players = this.lastPlayer(players);
+      return players;
     });
 
   },
@@ -54,7 +61,7 @@ module.exports = {
       }
     });
     
-    players = lastPlayer(players);
+    players = this.lastPlayer(players);
     return players;
   },
   teamsOnly : function(array){
@@ -75,7 +82,7 @@ module.exports = {
         arrayObject.push(t);
       }
     });
-    arrayObject = lastPlayer(arrayObject);
+    arrayObject = this.lastPlayer(arrayObject);
     return arrayObject;
 
   },
@@ -95,10 +102,8 @@ module.exports = {
         players.push(player);
       }
     });
-
-    players = lastPlayer(players);
+    players = this.lastPlayer(players);
     return players;
-
   },
   teamSort : function(array){
     array.sort(function(a, b){
@@ -108,14 +113,24 @@ module.exports = {
     });
     return array;
   },
-  lastPlayer : lastPlayer
-};
-
-function lastPlayer (array) {
-  //this determines the last item of the array and applies the last identifier 
-  //to the json request for us to display
-  if(array.length){
-    array[array.length - 1].last = true;
+  lastPlayer : function(array){
+    //this determines the last item of the array and applies the last identifier 
+    //to the json request for us to display
+    if(array.length){
+      array[array.length - 1].last = true;
+    }
+    return array;
   }
-  return array;
+
 }
+
+module.exports = PL;
+
+// function lastPlayer (array) {
+//   //this determines the last item of the array and applies the last identifier 
+//   //to the json request for us to display
+//   if(array.length){
+//     array[array.length - 1].last = true;
+//   }
+//   return array;
+// }
