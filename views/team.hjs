@@ -6,9 +6,9 @@
 	{
 		{{#name}}"name" : "{{name}}",{{/name}}
 		{{#position}}"position" : "{{position}}",{{/position}}
-		"team" : "{{team}}"{{#points}},
+		"team" : "{{team}}"{{#price}},
+		"price" : "{{price}}"{{/price}}{{#points}},
 		"points" : "{{points}}",{{/points}}
-		{{#price}}"price" : "{{price}}"{{/price}}
 	}{{^last}}, {{/last}}
 	{{/playerList}}
 	]

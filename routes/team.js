@@ -11,7 +11,7 @@ var content = {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	shared.getHTMLContent('http://fantasy.premierleague.com/player-list/')
+	shared.getHTMLContent('https://www.fantasyleague.com/Classic/Stats/playerlist.aspx?dpt=0')
 	.then(function(response){
 		//console.log(response);
 		var players = shared.lastPlayer(response);
@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
 
 /* GET specific team. */
 router.get('/:id', function(req, res, next) {
-	shared.getHTMLContent('http://fantasy.premierleague.com/player-list/')
+	shared.getHTMLContent('https://www.fantasyleague.com/Classic/Stats/playerlist.aspx?dpt=0')
 	.then(function(response){
 
 		//search for that team based on the id
