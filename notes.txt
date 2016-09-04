@@ -16,6 +16,9 @@ git add .
 git commit -m "some message"
 git push heroku master
 
+#Clear NODE Cache
+heroku config:unset NODEMODULESCACHE
+
 #Running locally
 heroku local web
 http://localhost:5000
