@@ -4,17 +4,18 @@ var PL = require('../shared');
 var shared = new PL();
 
 //sort players by team
-var content = {
-	title : 'Premier League Fantasy League API - Teams',
-	header : 'teams'
-}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	shared.getHTMLContent('https://www.fantasyleague.com/Classic/Stats/playerlist.aspx?dpt=0')
 	.then(function(response){
 		//console.log(response);
+		var content = {
+			title : 'Premier League Fantasy League API - Teams',
+			header : 'teams'
+		}
 		var players = shared.lastPlayer(response);
+
 		players = shared.teamsOnly(content.playerList);
 		content.playerList = players;
 		content.listName = 'teams';
@@ -28,11 +29,16 @@ router.get('/:id', function(req, res, next) {
 	shared.getHTMLContent('https://www.fantasyleague.com/Classic/Stats/playerlist.aspx?dpt=0')
 	.then(function(response){
 
-		//search for that team based on the id
+		var content = {
+			title : 'Premier League Fantasy League API - Teams',
+			header : 'teams'
+		}
+
 		var search = req.params.id;
-		content.listName = 'players';
 		var players = shared.lastPlayer(response);
+		
 		players = shared.teamSearch(players, search);
+		content.listName = 'players';
 		content.playerList = players;
 		content.search = search;
 		res.setHeader('Content-Type', 'application/json');
